@@ -4,7 +4,7 @@ Class Server
 Function index_range"""
 import csv
 import math
-from typing import List
+from typing import List, Dict
 
 
 class Server:
@@ -48,3 +48,15 @@ def index_range(page: int, page_size: int) -> tuple:
     end_index = start_index + page_size
 
     return start_index, end_index
+
+def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict :
+    """This Function returns page sie, page and data """
+
+    data_page = self.get_page(page, page_size)
+    total_items = len(self.dataset())
+    total_pages = 
+
+    dict = {
+        "page_size": len(data_page)
+        "page": get_page
+    }
