@@ -1,4 +1,6 @@
 Josiah Mbithi - Alx
+
+0x00-Pagination
 This Project we learnt Pagination
 Some Resources  that we used :Pagination and Types of pagination :
 https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/#pagination
