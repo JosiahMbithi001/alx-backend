@@ -35,7 +35,9 @@ class Server:
             pages = index_range(page, page_size)
             dataset = self.dataset()[pages[0]: pages[1]]
             return dataset
-        except:
+        except IndexError:
+            return []
+        except AssertionError:
             return []
 
 
@@ -43,7 +45,7 @@ def index_range(page: int, page_size: int) -> tuple:
     """This Function returns Start and End Index i.e Index Range"""
 
     if page < 1 or page_size < 1:
-        raise ValueError("Page and Page Size must be Positive Integer")
+        raise AssertionError(" Both Page and Page Size must be Positive Integer")
 
     start_index = (page - 1) * page_size
     end_index = start_index + page_size

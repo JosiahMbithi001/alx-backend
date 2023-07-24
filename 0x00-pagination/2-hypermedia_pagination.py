@@ -37,6 +37,24 @@ class Server:
         except:
             return []
 
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+        """This Function returns page size, page and data """
+
+        data_page = self.get_page(page, page_size)
+        total_items = len(self.dataset())
+        total_pages = math.ceil(total_items / page_size)
+
+        dict = {
+            "page_size": len(data_page),
+            "page": data_page,
+            "data": data_page,
+            "next_page": page + 1 if page < total_pages else None,
+            "prev_page": page - 1 if page > 1 else None,
+            "total_pages": total_pages,
+        }
+
+        return dict
+
 
 def index_range(page: int, page_size: int) -> tuple:
     """This Function returns Start and End Index i.e Index Range"""
@@ -48,15 +66,3 @@ def index_range(page: int, page_size: int) -> tuple:
     end_index = start_index + page_size
 
     return start_index, end_index
-
-def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict :
-    """This Function returns page sie, page and data """
-
-    data_page = self.get_page(page, page_size)
-    total_items = len(self.dataset())
-    total_pages = 
-
-    dict = {
-        "page_size": len(data_page)
-        "page": get_page
-    }
