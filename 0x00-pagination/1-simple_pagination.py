@@ -13,6 +13,7 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """This Part Initializes the Function"""
         self.__dataset = None
 
     def dataset(self) -> List[List]:
