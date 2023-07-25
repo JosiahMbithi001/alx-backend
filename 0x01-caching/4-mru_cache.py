@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
-"""LRU Caching"""
+#!/usr/binenv python3
+"""MRU Caching"""
 
 from base_caching import BaseCaching
 
-class LRUCache(BaseCaching):
+class MRUCache(BaseCaching):
     """This class inherits from BaseCaching"""
-    
+
     def __init__(self):
         """Initialize method"""
         super().__init__()
@@ -17,14 +17,13 @@ class LRUCache(BaseCaching):
             if key in self.cache_data:
                 self.keys.remove(key)
             elif len(self.cache_data) >= self.MAX_ITEMS:
-                discard = self.keys.pop(0)
+                discard = self.keys.pop()
                 del self.cache_data[discard]
                 print("DISCARD: {}".format(discard))
             self.keys.append(key)
             self.cache_data[key] = item
         else:
             pass
-        
 
     def get(self, key):
         """Get an item by key"""
@@ -33,5 +32,3 @@ class LRUCache(BaseCaching):
             self.keys.append(key)
             return self.cache_data[key]
         return None
-    
-
