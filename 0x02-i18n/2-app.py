@@ -20,7 +20,7 @@ app.config.from_object(Config)
 
 @babel.localeselector
 def get_locale():
-    # Check if the user has explicitly set the language using URL parameters
+    """ Check if the user has explicitly set the language using URL parameter"""
     if 'lang' in request.args:
         return request.args.get('lang')
 
