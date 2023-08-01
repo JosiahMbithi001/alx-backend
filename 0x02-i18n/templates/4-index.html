@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ _('Welcome to Holberton') }}</title>
+</head>
+<body>
+    <h1>{{ _('Hello world!') }}</h1>
+    <p>{{ _('Selected language: {language}', language=g.get('locale', request.accept_languages.best_match(app.config["LANGUAGES"]))) }}</p>
+</body>
+</html>
