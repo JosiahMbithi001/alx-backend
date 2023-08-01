@@ -8,7 +8,8 @@ babel = Babel(app)
 
 # Configuration
 class Config:
-    LANGUAGES = ['en', 'fr']
+	"""This Class Configures Babbel"""
+	LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
@@ -16,7 +17,8 @@ app.config.from_object(Config)
 
 @babel.localeselector
 def get_locale():
-    # Check if the locale parameter is present in the request args
+
+    """ Check if the locale parameter is present in the request args"""
     if 'locale' in request.args:
         locale = request.args.get('locale')
         if locale in app.config['LANGUAGES']:
@@ -27,6 +29,8 @@ def get_locale():
 
 @app.route('/')
 def index():
+	"""Render Home Page"""
+
     return render_template('4-index.html')
 
 if __name__ == '__main__':
